@@ -46,7 +46,7 @@ st.write("### (2) add a multi-select for Sub_Category *in the selected Category 
 import streamlit as st
 
 options = st.multiselect(
-    "sub_categories",
+    'sub_categories',
     ['Bookcases', 'Chairs', 'Furnishings', 'Tables'],
     ['Appliances', 'Art', 'Binders', 'Envelopes', 'Fasteners', 'Labels', 'Storage', 'Supplies'],
     ['Accessories', 'Copiers', 'Machines', 'Paper','Phones'])
