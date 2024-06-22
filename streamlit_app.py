@@ -45,9 +45,8 @@ st.write('You selected:', selected_category)
 st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* (https://docs.streamlit.io/library/api-reference/widgets/st.multiselect)")
 import streamlit as st
 
-options = st.multiselect(
-    "sub_categories",
-    ['Bookcases', 'Chairs', 'Furnishings', 'Tables'], ['Appliances', 'Art', 'Binders', 'Envelopes', 'Fasteners', 'Labels', 'Storage', 'Supplies'], ['Accessories', 'Copiers', 'Machines', 'Paper','Phones']
+options = st.multiselect("sub_categories",
+    ['Bookcases', 'Chairs', 'Furnishings', 'Tables'], ['Appliances', 'Art', 'Binders', 'Envelopes', 'Fasteners', 'Labels', 'Storage', 'Supplies'], ['Accessories', 'Copiers', 'Machines', 'Paper','Phones'])
 
 st.write("You selected:", options)
 
