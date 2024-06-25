@@ -38,25 +38,26 @@ categories = ['Furniture', 'Office Supplies', 'Technology']
 sub_categories = st.multiselect("Select Sub_Categories", df[df['Category'] == category]['Sub_Category'].unique())
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
-# Sidebar selection
-st.sidebar.title('Select Filters')
-category = st.sidebar.selectbox('Choose Category', df['Category'].unique())
-subcategory = st.sidebar.selectbox('Choose Subcategory', data['Subcategory'].unique())
+# Import necessary libraries
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
 
-# Filter the data based on selected category and subcategory
-filtered_data = data[(data['Category'] == category) & (data['Subcategory'] == subcategory)]
+# Sample data (replace with your own data loading logic)
+data = {
+    caterogry, sub-caterogry
+}
+df = pd.DataFrame(data)
 
-# Display the filtered data
-st.write(f"Showing data for Category: {category} and Subcategory: {subcategory}")
-st.write(filtered_data)
+# Streamlit app
+st.title('Sales Data Line Chart')
 
-# Plot the line chart
-st.write("### Line Chart")
-plt.figure(figsize=(10, 6))
-plt.plot(filtered_data['Value'], marker='o')
-plt.xlabel('Index')
-plt.ylabel('Value')
-st.pyplot(plt)
+# Line chart
+st.line_chart(df.set_index('Date'))
+
+# Optional: Display the raw data
+st.subheader('Raw Data')
+st.write(df)
 
 
 
