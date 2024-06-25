@@ -38,12 +38,15 @@ categories = ['Furniture', 'Office Supplies', 'Technology']
 sub_categories = st.multiselect("Select Sub_Categories", df[df['Category'] == category]['Sub_Category'].unique())
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
-df.multiselect('Sub_Cateogry', inplace=True)
-st.dataframe(Sub_Categories)
+import streamlit as st
+import pandas as pd
+import numpy as np
 
-# Here the grouped months are the index and automatically used for the x axis
-st.line_chart(Sub_Categories, y="Sales")
+chart_data = pd.DataFrame(np.random.randn(20, 3), columns=['Furniture', 'Office Supplies', 'Technology'])
 
+st.line_chart(
+   chart_data, x="Sales", y=['Furniture', 'Office Supplies', 'Technology'], color=["#FF0000", "#0000FF"]  # Optional
+)
 
 
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
