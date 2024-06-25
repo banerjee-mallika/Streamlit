@@ -40,7 +40,7 @@ sub_categories = st.multiselect("Select Sub_Categories", df[df['Category'] == ca
 st.write("### (3) show a line chart of sales for the selected items in (2)")
 # Sidebar selection
 st.sidebar.title('Select Filters')
-category = st.sidebar.selectbox('Choose Category', data['Category'].unique())
+category = st.sidebar.selectbox('Choose Category', df['Category'].unique())
 subcategory = st.sidebar.selectbox('Choose Subcategory', data['Subcategory'].unique())
 
 # Filter the data based on selected category and subcategory
