@@ -38,30 +38,6 @@ categories = ['Furniture', 'Office Supplies', 'Technology']
 sub_categories = st.multiselect("Select Sub_Categories", df[df['Category'] == category]['Sub_Category'].unique())
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
-# Import necessary libraries
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# Sample data (replace with your own data loading logic)
-data = {
-    caterogry, sub-caterogry
-}
-df = pd.DataFrame(data)
-
-# Streamlit app
-st.title('Sales Data Line Chart')
-
-# Line chart
-st.line_chart(df.set_index('Date'))
-
-# Optional: Display the raw data
-st.subheader('Raw Data')
-st.write(df)
-
-
-
-
 
 
 
