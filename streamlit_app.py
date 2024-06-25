@@ -38,6 +38,30 @@ categories = ['Furniture', 'Office Supplies', 'Technology']
 sub_categories = st.multiselect("Select Sub_Categories", df[df['Category'] == category]['Sub_Category'].unique())
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
+# Sidebar selection
+st.sidebar.title('Select Filters')
+category = st.sidebar.selectbox('Choose Category', data['Category'].unique())
+subcategory = st.sidebar.selectbox('Choose Subcategory', data['Subcategory'].unique())
+
+# Filter the data based on selected category and subcategory
+filtered_data = data[(data['Category'] == category) & (data['Subcategory'] == subcategory)]
+
+# Display the filtered data
+st.write(f"Showing data for Category: {category} and Subcategory: {subcategory}")
+st.write(filtered_data)
+
+# Plot the line chart
+st.write("### Line Chart")
+plt.figure(figsize=(10, 6))
+plt.plot(filtered_data['Value'], marker='o')
+plt.xlabel('Index')
+plt.ylabel('Value')
+st.pyplot(plt)
+
+
+
+
+
 
 
 
