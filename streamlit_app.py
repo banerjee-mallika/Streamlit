@@ -38,14 +38,6 @@ categories = ['Furniture', 'Office Supplies', 'Technology']
 sub_categories = st.multiselect("Select Sub_Categories", df[df['Category'] == category]['Sub_Category'].unique())
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
-import streamlit as st
-import pandas as pd
-import numpy as np
-
-chart_data = pd.DataFrame(np.random.randn(20, 3), sub_categories = st.multiselect("Select Sub_Categories", df[df['Category'] == category]['Sub_Category'].unique())
-st.line_chart(
-   chart_data, x="Sales", y="sub_categories", color=["#FF0000", "#0000FF"]  # Optional
-)
 
 
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
