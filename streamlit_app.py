@@ -42,7 +42,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-chart_data = pd.DataFrame(np.random.randn(20, 3), columns=['Furniture', 'Office Supplies', 'Technology'])
+chart_data = pd.DataFrame(np.random.randn(20, 3), Category = ['Furniture', 'Office Supplies', 'Technology'])
 
 st.line_chart(
    chart_data, x="Sales", y=['Furniture', 'Office Supplies', 'Technology'], color=["#FF0000", "#0000FF"]  # Optional
