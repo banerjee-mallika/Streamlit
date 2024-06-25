@@ -38,7 +38,11 @@ categories = ['Furniture', 'Office Supplies', 'Technology']
 sub_categories = st.multiselect("Select Sub_Categories", df[df['Category'] == category]['Sub_Category'].unique())
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
-st.plotly_chart(px.line(Sales, x="<Sales>" ,y=["Sub_Categories"]), use_container_width=True)
+df.multiselect('Sub_Cateogry', inplace=True)
+st.dataframe(Sub_Categories)
+
+# Here the grouped months are the index and automatically used for the x axis
+st.line_chart(Sub_Categories, y="Sales")
 
 
 
