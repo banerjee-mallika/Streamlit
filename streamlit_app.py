@@ -42,8 +42,6 @@ st.write("### (3) show a line chart of sales for the selected items in (2)")
 
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
 import streamlit as st
-categories = ['Furniture', 'Office Supplies', 'Technology']
-sub_categories = st.multiselect("Select Sub_Categories", df[df['Category'] == category]['Sub_Category'].unique())
 st.metric(label="Total Sales", value="Total Profit", delta="Profit margin")
 
 
