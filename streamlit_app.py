@@ -42,10 +42,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-chart_data = pd.DataFrame(np.random.randn(20, 3), Category = ['Furniture', 'Office Supplies', 'Technology'])
-
+chart_data = pd.DataFrame(np.random.randn(20, 3), sub_categories = st.multiselect("Select Sub_Categories", df[df['Category'] == category]['Sub_Category'].unique())
 st.line_chart(
-   chart_data, x="Sales", y=['Furniture', 'Office Supplies', 'Technology'], color=["#FF0000", "#0000FF"]  # Optional
+   chart_data, x="Sales", y="sub_categories", color=["#FF0000", "#0000FF"]  # Optional
 )
 
 
