@@ -41,9 +41,16 @@ st.write("### (3) show a line chart of sales for the selected items in (2)")
 
 
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
-total_sales = filtered_df['Sales'].sum()
-total_quantity = filtered_df['Quantity'].sum()
-total_profit = filtered_df['Profit'].sum()
 
 
 st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
+overall_total_profit = df['Profit'].sum()
+overall_total_sales = df['Sales'].sum()
+overall_profit_margin = overall_total_profit / overall_total_sales * 100
+selected_profit_margin = total_profit / total_sales * 100 if total_sales != 0 else 0
+profit_margin_delta = selected_profit_margin - overall_profit_margin
+    
+col1, col2, col3 = st.columns(3)
+col1.metric("Total Sales", f"${total_sales:,.2f}")
+col2.metric("Total Quanity", f"{total_quantity}")
+col3.metric("Total Profit", f"${total_profit:,.2f}", delta=f"{profit_margin_delta:.2f}%")
