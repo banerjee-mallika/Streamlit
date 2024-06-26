@@ -44,7 +44,7 @@ st.write("### (5) use the delta option in the overall profit margin metric to sh
 overall_total_profit = df['Profit'].sum()
 overall_total_sales = df['Sales'].sum()
 overall_profit_margin = overall_total_profit / overall_total_sales * 100
-selected_profit_margin = total_profit / total_sales * 100 if total_sales != 0 else 0
+selected_profit_margin = total_profit / total_sales * 100 if total_sales =! 0 else 0
 profit_margin_delta = selected_profit_margin - overall_profit_margin
     
 col1, col2, col3 = st.columns(3)
